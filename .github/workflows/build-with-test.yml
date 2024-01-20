@@ -18,7 +18,10 @@ jobs:
       uses: actions/setup-java@v1.4.3
       with:
         java-version: 21
-        
+    
+    - name: 授予gradlew执行权限
+      run: chmod +x gradlew
+
     - name: Maven Build
       run: |
         cd fabric
