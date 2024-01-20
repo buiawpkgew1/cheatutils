@@ -18,13 +18,11 @@ jobs:
       uses: actions/setup-java@v1.4.3
       with:
         java-version: 21
-    
-    - name: 授予gradlew执行权限
-      run: chmod +x gradlew
 
     - name: Maven Build
       run: |
         cd fabric
+        chmod +x gradlew
         ./gradlew build
         cd ..
         cd forge
@@ -37,6 +35,6 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "jar"
         prerelease: true
-        title: "FNAmplifications 自动构建版本"
+        title: "自动构建版本"
         files: |
           **/build/libs/*.jar
