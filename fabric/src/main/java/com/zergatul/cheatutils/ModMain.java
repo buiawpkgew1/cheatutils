@@ -94,10 +94,10 @@ public class ModMain implements ClientModInitializer {
 
     private void register(Module module) {
         modules.add(module);
-        logger.info("Registered: {}", module.getClass().getName());
+        logger.info("已注册模块: {}", module.getClass().getName());
     }
 
     private void register(Object instance) {
-        logger.info("Registered: {}", instance.getClass().getName());
+        logger.info("已注册模块: {}", instance.getClass().getName());
     }
 }
