@@ -21,11 +21,9 @@ jobs:
 
     - name: Maven Build
       run: |
-        cd fabric
+        git clone --recurse-submodules https://github.com/Zergatul/cheatutils.git
+        cd cheatutils/fabric
         chmod +x gradlew
-        ./gradlew build
-        cd ..
-        cd forge
         ./gradlew build
 
     - name: 自动释放
