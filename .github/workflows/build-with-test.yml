@@ -22,10 +22,10 @@ jobs:
     - name: Maven Build
       run: |
         cd fabric
-        gradlew build
+        ./gradlew build
         cd ..
         cd forge
-        gradlew build
+        ./gradlew build
 
     - name: 自动释放
       if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
