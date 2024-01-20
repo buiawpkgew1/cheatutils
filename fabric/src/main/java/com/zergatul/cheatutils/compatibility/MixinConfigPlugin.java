@@ -30,7 +30,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
             var mods = FabricLoaderImpl.INSTANCE.getModsInternal();
             boolean sodium = mods.stream().anyMatch(m -> m.getMetadata().getId().equals("sodium"));
             if (sodium) {
-                logger.info("Sodium detected. Will apply {}.", mixinClassName);
+                logger.info("检测到Sodium。将应用{}。", mixinClassName);
                 return true;
             } else {
                 return false;
